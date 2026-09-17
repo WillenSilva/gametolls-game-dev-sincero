@@ -1,0 +1,18 @@
+{
+  "name": "gamemaker-mcp-marketplace",
+  "owner": {
+    "name": "William Dev"
+  },
+  "metadata": {
+    "description": "Skills do canal William Dev para quem cria jogos no GameMaker com apoio de IA.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "game-maker-assistente",
+      "source": "./plugins/game-maker-assistente",
+      "description": "Metodologia de escrita e estruturação de jogos no GameMaker (GML).",
+      "category": "game-dev"
+    }
+  ]
+}

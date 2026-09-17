@@ -1,0 +1,10 @@
+{
+  "name": "game-maker-assistente",
+  "description": "Metodologia de escrita e estruturação de jogos no GameMaker (GML) — arquitetura, sistemas e boas práticas. Skill somente-instrução: não executa scripts, não chama serviços externos e não requer nenhuma credencial.",
+  "version": "1.0.0",
+  "author": {
+    "name": "William Dev"
+  },
+  "license": "MIT",
+  "keywords": ["gamemaker", "gml", "game-dev", "gamedev"]
+}
