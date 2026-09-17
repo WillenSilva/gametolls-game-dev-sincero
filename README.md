@@ -11,7 +11,7 @@ Marketplace de skills do canal **GameTolls Game Dev Sincero** para quem cria jog
 Dentro do Claude Code, rode estes dois comandos (um de cada vez):
 
 ```
-/plugin marketplace add WillenSilva/gamemaker-mcp-marketplace
+/plugin marketplace add WillenSilva/gametolls-game-dev-sincero
 /plugin install game-maker-assistente
 ```
 
@@ -32,7 +32,7 @@ Antes de instalar qualquer plugin de qualquer fonte (inclusive este), é boa pr�
 Para pegar uma versão nova depois de eu atualizar o repositório:
 
 ```
-/plugin marketplace update WillenSilva/gamemaker-mcp-marketplace
+/plugin marketplace update WillenSilva/gametolls-game-dev-sincero
 /plugin install game-maker-assistente
 ```
 
