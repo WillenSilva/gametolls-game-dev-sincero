@@ -90,6 +90,19 @@ Padrão recomendado: montar uma **struct** com os dados a salvar → `json_strin
 - Use `show_debug_message()` e o profiler nativo para medir gargalos com números reais antes de otimizar "no achismo" (ex.: laços aninhados repetindo a room célula a célula são um suspeito clássico).
 - Configure **Texture Groups** pra controlar quais sprites ficam juntos na VRAM.
 
+## Integração com GMS MCP
+
+Sempre que o servidor MCP `gms-mcp` (https://github.com/Ampersand-Game-Studios/gms-mcp) estiver conectado na sessão, prefira suas ferramentas em vez de pedir pro usuário colar código manualmente no editor — ele permite ler e editar o projeto GameMaker (`.yyp`) diretamente pelo Claude.
+
+- **Verificar disponibilidade primeiro:** chame `gm_capabilities` e `gm_project_info` antes de assumir que o MCP está presente ou de tentar usá-lo; se as ferramentas não aparecerem na sessão, trate como indisponível e volte ao fluxo manual (dar o código GML pra colar).
+- **Perfis de permissão:** o servidor roda em `safe` (somente leitura — inspeção de projeto, assets, rooms, objetos, referências, navegação de código) ou `full` (leitura + criação/edição de assets, instâncias em rooms, sprites, áudio, build via Igor, bridge TCP para interação com o jogo em execução). Confirme com o usuário antes de qualquer operação de escrita (criar/editar objeto, sala, asset) se não estiver claro que o perfil `full` foi autorizado — segue a mesma lógica de confirmação de ações com efeito colateral já usada no resto do fluxo.
+- **Setup (uma vez por projeto), se o usuário pedir ajuda pra configurar:**
+  1. Pré-requisitos: Python 3.10+, um projeto GameMaker com `.yyp`, `pipx install gms-mcp` (mais `pipx inject gms-mcp Pillow` se precisar de suporte a imagem).
+  2. Gerar a configuração do cliente a partir da pasta do projeto: `gms-mcp-init --client claude-code --scope workspace --action app-setup` (somente leitura) ou `--profile full` (leitura + escrita).
+  3. Reiniciar a conexão MCP do cliente depois do setup.
+  4. Verificar com `gms-mcp doctor --project`.
+- **Uso prático:** com o MCP ativo, aplique a mesma metodologia desta skill (máquina de estados, herança, hordas via struct, etc.) mas execute as mudanças diretamente nos assets do projeto via `gms-mcp` em vez de descrever blocos de código soltos — e ainda assim explique cada mudança em termos do sistema (o que ela resolve), não só o que foi escrito.
+
 ## Controle de versão (Git)
 
 Fluxo mínimo recomendado desde o início de qualquer projeto: `git init` no projeto → `git add`/`git commit` a cada marco funcional → `git log` pra consultar histórico → desfazer mudanças não commitadas quando um experimento dá errado → `git revert` para desfazer um commit já feito com segurança (sem reescrever histórico).
