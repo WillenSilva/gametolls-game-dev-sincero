@@ -1,10 +1,10 @@
 {
   "name": "gamemaker-mcp-marketplace",
   "owner": {
-    "name": "William Dev"
+    "name": "GameTolls Game Dev Sincero"
   },
   "metadata": {
-    "description": "Skills do canal William Dev para quem cria jogos no GameMaker com apoio de IA.",
+    "description": "Skills do canal GameTolls Game Dev Sincero para quem cria jogos no GameMaker com apoio de IA.",
     "version": "1.0.0"
   },
   "plugins": [

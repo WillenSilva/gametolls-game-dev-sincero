@@ -1,6 +1,6 @@
-# GameMaker MCP Marketplace
+# GameTolls Game Dev Sincero
 
-Marketplace de skills do canal **William Dev** para quem cria jogos no GameMaker Studio 2 com apoio de IA (Claude Code).
+Marketplace de skills do canal **GameTolls Game Dev Sincero** para quem cria jogos no GameMaker Studio 2 com apoio de IA (Claude Code).
 
 ## O que tem aqui
 
